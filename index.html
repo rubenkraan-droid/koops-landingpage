@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koopsdag zaterdag 4 oktober · Koops Chalets & Stacaravans</title>
+<!--
+  LANDINGSPAGINA KOOPS CHALETS & STACARAVANS · concept Recraparcs
+  Huisstijl overgenomen van koopschalets.nl: Raleway, oranje #F1790A (CTA), donker teal #0C3B40 (koppen),
+  teal #16818B (accent), licht teal #E7F2F3 (sectievlak), witte kaarten met zachte schaduw, schuine sectiescheiding.
+  Twee gelijkwaardige CTA's: aanmelding Koopsdag (primair) en brochure aanvragen.
+  Formulieren zijn placeholders voor GoHighLevel/LeadConnector-embed.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--oranje:#F1790A;--oranje-d:#d96a06;--teal-d:#0C3B40;--teal:#16818B;--teal-l:#E7F2F3;--grijs:#5C6B6B;--tekst:#222;--lijn:#dfe7e8}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Raleway,"Helvetica Neue",Arial,sans-serif;color:var(--tekst);line-height:1.6;background:#fff}
+  h1,h2,h3{color:var(--teal-d);font-weight:700;line-height:1.15;margin:0 0 .5em}
+  h1{font-size:clamp(28px,4.2vw,44px);font-weight:800}
+  h2{font-size:clamp(22px,3vw,32px)}
+  h3{font-size:18px}
+  p{margin:0 0 1em}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  .btn{display:inline-block;background:var(--oranje);color:#fff;font-weight:600;padding:14px 26px;border-radius:6px;text-decoration:none;box-shadow:0 4px 14px rgba(241,121,10,.35);border:0;font-family:inherit;font-size:16px;cursor:pointer}
+  .btn:hover{background:var(--oranje-d)}
+  .btn.licht{background:#fff;color:var(--oranje);border:1.5px solid var(--oranje);box-shadow:none}
+  .klein{font-size:13px;color:var(--grijs)}
+  /* header */
+  header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:0;z-index:5}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:76px}
+  .logo{font-weight:800;font-size:22px;color:var(--teal-d);letter-spacing:.04em;line-height:1}
+  .logo small{display:block;font-size:10px;font-weight:500;letter-spacing:0;color:var(--teal)}
+  .tel{background:var(--oranje);color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px}
+  /* hero */
+  .hero{background:var(--teal-l);position:relative;padding:64px 0 96px;clip-path:polygon(0 0,100% 0,100% 92%,0 100%)}
+  .hero .wrap.top{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .label{display:inline-block;background:var(--teal-d);color:#fff;font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;margin-bottom:16px}
+  .hero p.sub{font-size:18px;color:#2f3d3d;max-width:560px}
+  .cta-rij{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0 8px}
+  .beeld{background:#cfd9da;border-radius:10px;aspect-ratio:4/3;box-shadow:0 12px 40px rgba(12,59,64,.18);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;text-align:center;padding:20px;background-image:linear-gradient(160deg,#9fb6b8,#6f8f92)}
+  .bewijsrij{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+  .bewijs{background:#fff;border-radius:8px;padding:16px 18px;box-shadow:0 4px 18px rgba(12,59,64,.06)}
+  .bewijs b{display:block;color:var(--teal);font-size:24px;font-weight:800;line-height:1}
+  .bewijs span{font-size:13px;color:var(--grijs)}
+  /* secties */
+  section{padding:64px 0}
+  .kaarten{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .kaart{background:#fff;border-radius:8px;padding:26px;box-shadow:0 6px 24px rgba(12,59,64,.07)}
+  .kaart .icoon{width:44px;height:44px;border-radius:8px;background:var(--teal-l);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px}
+  .stappen{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+  .stap{border-left:3px solid var(--oranje);padding:4px 0 4px 18px}
+  .stap b{display:block;color:var(--teal-d);font-size:17px}
+  .stap small{color:var(--teal);font-weight:600}
+  .grijsvlak{background:var(--teal-l)}
+  .faq details{background:#fff;border-radius:8px;padding:16px 20px;margin-bottom:10px;box-shadow:0 4px 18px rgba(12,59,64,.05)}
+  .faq summary{font-weight:600;color:var(--teal-d);cursor:pointer}
+  /* formulier */
+  .formulier{background:#fff;border-radius:10px;padding:30px;box-shadow:0 12px 40px rgba(12,59,64,.12)}
+  .formulier label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px;color:var(--teal-d)}
+  .formulier input,.formulier select{width:100%;padding:12px;border:1px solid var(--lijn);border-radius:6px;font-family:inherit;font-size:15px}
+  .placeholder{border:2px dashed var(--teal);border-radius:8px;padding:14px;font-size:13px;color:var(--teal);background:#f6fbfb;margin-top:14px}
+  .twee{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .nazending{background:var(--teal-l);border-radius:8px;padding:20px 22px}
+  .nazending ol{margin:8px 0 0;padding-left:20px}
+  footer{background:var(--teal-d);color:#cfe0e2;padding:36px 0;font-size:14px}
+  footer a{color:#fff}
+  @media(max-width:860px){
+    .twee{grid-template-columns:1fr}.kaarten,.stappen,.bewijsrij{grid-template-columns:1fr 1fr}
+    .hero{padding:0 0 56px;clip-path:polygon(0 0,100% 0,100% 96%,0 100%)}
+    .hero .wrap.top{display:flex;flex-direction:column;padding:0}.hero .heroimg{order:0}.hero .tekst{order:1}
+    .hero .heroimg{position:relative;margin:0 0 22px}
+    .hero .heroimg img{width:100%;height:58vw;max-height:340px;object-fit:cover;border-radius:0 0 18px 18px;box-shadow:none;display:block}
+    .hero .heroimg .label{display:inline-block!important;position:absolute;left:16px;bottom:14px;margin:0;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+    .hero .tekst{padding:0 20px}
+    .hero .tekst .label{display:none}
+    .hero h1{font-size:27px}
+    .hero p.sub{font-size:16px}
+    .cta-rij .btn{width:100%;text-align:center}
+    .hero .wrap:not(.top){padding:0 20px}
+  }
+  @media(max-width:520px){.kaarten,.stappen,.bewijsrij{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="logo">KOOPS<small>Chalets &amp; Stacaravans</small></div>
+  <a class="tel" href="tel:+31683512890">+31 6 83512890</a>
+</div></header>
+
+<!-- SECTIE: Above the fold · droomuitkomst + kans van slagen + moeite -->
+<section class="hero"><div class="wrap top">
+  <div class="tekst">
+    <span class="label">Koopsdag · zaterdag 4 oktober · 09:00 tot 16:00 · Elim</span>
+    <h1>Bekijk op één dag 30+ chalets en stacaravans, en weet 's avonds welke bij u past</h1>
+    <p class="sub">Nieuw en gebruikt naast elkaar op ons terrein in Elim. U loopt rond, stelt uw vragen aan een onafhankelijk adviseur en krijgt een eerlijk antwoord, ook over de minpunten. Zonder verkoopdruk en zonder verplichting.</p>
+    <div class="cta-rij">
+      <a class="btn" href="#aanmelden">Meld u aan voor de Koopsdag</a>
+      <a class="btn licht" href="#brochure">Of ontvang eerst de brochure</a>
+    </div>
+    <p class="klein">Gratis en vrijblijvend. Aanmelden duurt één minuut. Wij bellen u binnen een werkdag om uw wensen door te nemen, zodat de juiste modellen voor u klaarstaan.</p>
+  </div>
+  <div class="heroimg"><!-- Tijdelijk beeld: gegenereerd voorbeeld. Vervangen door echte foto van het Koops-terrein. --><img alt="Chalet op het terrein van Koops in Elim" src="https://cdn.openart.ai/openart-ai/production/2026-09/create-image/user_3BASUd367oDDACI8P3ogUaR3K5G/image_1789485599464_d6ccb870_1789485600030_88d7ce32.png" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 38%;display:block;border-radius:10px;box-shadow:0 12px 40px rgba(12,59,64,.18)"><span class="label" style="display:none">Koopsdag · zaterdag 4 oktober · Elim</span></div>
+</div>
+<div class="wrap">
+  <!-- BEWIJS NODIG: exacte aantallen en jaren invullen door Koops; onderstaande zijn placeholders -->
+  <div class="bewijsrij">
+    <div class="bewijs"><b>30+</b><span>chalets en stacaravans direct te bezichtigen</span></div>
+    <div class="bewijs"><b>Nieuw én gebruikt</b><span>van occasion tot Casalet designchalet</span></div>
+    <div class="bewijs"><b>Onafhankelijk</b><span>geen merkbelang, dus eerlijk advies</span></div>
+    <div class="bewijs"><b>[x] jaar</b><span>ervaring in de branche <!-- BEWIJS NODIG --></span></div>
+  </div>
+</div></section>
+
+<!-- SECTIE: Herkenning · moeite en risico -->
+<section><div class="wrap">
+  <h2>Online vergelijken kost weken. Op de Koopsdag ziet u het verschil in een uur.</h2>
+  <p style="max-width:720px">Foto's zeggen weinig over ruimte, isolatie en afwerking. Wie twintig advertenties naast elkaar legt, weet nog steeds niet hoe een chalet van 2009 voelt naast een model van 2023. Op ons terrein staat het naast elkaar, en staat er iemand naast u die het verschil kan uitleggen.</p>
+</div></section>
+
+<!-- SECTIE: Aanbod in drie blokken · droomuitkomst + kans van slagen -->
+<section class="grijsvlak"><div class="wrap">
+  <h2>Wat u op zaterdag 4 oktober krijgt</h2>
+  <div class="kaarten">
+    <div class="kaart"><div class="icoon">1</div><h3>Alles open, alles te bekijken</h3><p>Nieuwe modellen, occasions en de Casalet designchalets staan open. Loop erin, meet na, vergelijk. Prijzen staan erbij; wat op aanvraag is, rekenen wij ter plekke voor u uit.</p></div>
+    <div class="kaart"><div class="icoon">2</div><h3>Eerlijk advies van een onafhankelijke partij</h3><p>Koops is geen merkdealer die één fabriek moet verkopen. U hoort de voordelen én de minpunten van elk model, zodat u een aankoop doet waar u over tien jaar nog blij mee bent.</p></div>
+    <div class="kaart"><div class="icoon">3</div><h3>Financiering, inruil en plaatsing in één gesprek</h3><p>Financiering via Leenattent, inruil van uw huidige chalet of caravan, transport en plaatsing op uw plek, en een aflevercheck. U weet dezelfde dag wat het totaal wordt.</p></div>
+  </div>
+</div></section>
+
+<!-- SECTIE: Hoe het werkt · tijdsverloop + moeite -->
+<section><div class="wrap">
+  <h2>In drie stappen van aanmelding tot uw eigen chalet</h2>
+  <div class="stappen">
+    <div class="stap"><small>Vandaag, 1 minuut</small><b>U meldt zich aan</b>Naam, telefoonnummer en waar u naar zoekt. Meer hoeft niet.</div>
+    <div class="stap"><small>Binnen een werkdag</small><b>Wij bellen u kort</b>Vijf minuten over budget, gebruik en plek, zodat de passende modellen voor u klaarstaan.</div>
+    <div class="stap"><small>Zaterdag 4 oktober</small><b>U bekijkt en beslist</b>Rondlopen, vergelijken, rekenen. Wilt u tekenen, dan kan dat. Wilt u erover slapen, ook prima.</div>
+  </div>
+</div></section>
+
+<!-- SECTIE: Bezwaren · moeite en risico -->
+<section class="grijsvlak faq"><div class="wrap">
+  <h2>Wat bezoekers ons vooraf vragen</h2>
+  <details open><summary>Moet ik op de Koopsdag beslissen?</summary><p>Nee. De prijzen die u op de dag krijgt, gelden ook de week erna. <!-- BEWIJS NODIG: bevestigen met Koops --></p></details>
+  <details><summary>Ik heb nog geen plek voor een chalet. Heeft het dan zin om te komen?</summary><p>Ja. Wij helpen ook bij jaarplaatsen en campings, en kennen de regels per park. Bespreek het op de dag, dan weet u wat mogelijk is voordat u koopt.</p></details>
+  <details><summary>Kan ik mijn huidige stacaravan inruilen?</summary><p>Ja. Neem foto's en het bouwjaar mee, dan krijgt u dezelfde dag een indicatie van de inruilwaarde.</p></details>
+  <details><summary>Is een gebruikt chalet wel veilig om te kopen?</summary><p>Elk gebruikt model dat wij verkopen is nagekeken en wordt afgeleverd met een aflevercheck. Wat er nog aan mankeert, vertellen wij vooraf.</p></details>
+  <details><summary>Kan ik niet op 4 oktober?</summary><p>Elke maand is er een Koopsdag. Meld u aan, dan ontvangt u de volgende datum, of plan een bezoek op een doordeweekse dag.</p></details>
+</div></section>
+
+<!-- SECTIE: Slot-CTA met formulier · moeite en risico -->
+<section id="aanmelden"><div class="wrap twee">
+  <div>
+    <h2>Meld u aan voor de Koopsdag van zaterdag 4 oktober</h2>
+    <p>Gratis, vrijblijvend, en de koffie staat klaar. Liever eerst lezen? Vraag hieronder de brochure aan, dan sturen wij die direct.</p>
+    <div class="nazending">
+      <b>Wat er gebeurt nadat u verzendt</b>
+      <ol>
+        <li>U ontvangt direct een bevestiging per e-mail met adres en tijden.</li>
+        <li>Binnen een werkdag belt een medewerker u kort om uw wensen te noteren.</li>
+        <li>Op de dag zelf staan de modellen die bij u passen voor u klaar.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="formulier">
+    <!-- GHL-EMBED PLACEHOLDER: formulier "Koopsdag aanmelding". Velden: voornaam, achternaam, e-mail, telefoon, interesse (nieuw/gebruikt/mantelzorg/weet nog niet), heeft al een plek (ja/nee). Tag: KOOPS-KD. Pipeline: Koops, stage "Nieuwe aanvraag". UTM's meesturen. -->
+    <h3>Aanmelden Koopsdag</h3>
+    <label>Naam</label><input type="text" placeholder="Uw naam">
+    <label>E-mailadres</label><input type="email" placeholder="naam@voorbeeld.nl">
+    <label>Telefoonnummer</label><input type="tel" placeholder="06 12345678">
+    <label>Waar zoekt u naar?</label><select><option>Nieuw chalet</option><option>Gebruikt chalet of stacaravan</option><option>Mantelzorgwoning</option><option>Weet ik nog niet</option></select>
+    <p style="margin-top:18px"><button class="btn" type="button">Meld u aan voor de Koopsdag</button></p>
+    <p class="klein">Geen verplichtingen. Wij delen uw gegevens niet met derden.</p>
+    <div class="placeholder" id="brochure">
+      <!-- GHL-EMBED PLACEHOLDER: formulier "Brochure aanvraag". Velden: naam, e-mail, telefoon. Tag: KOOPS-BROCHURE. -->
+      Tweede formulier: <b>Brochure aanvragen</b> (naam, e-mail, telefoon). Zelfde opvolging: bellen binnen een werkdag.
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Koops Chalets &amp; Stacaravans BV · Gosem Engelsstraat 13, 7916 PX Elim · <a href="tel:+31683512890">+31 6 83512890</a> · <a href="mailto:info@koopschalets.nl">info@koopschalets.nl</a><br>
+  Ma t/m za 08:00 tot 17:00, zo 12:00 tot 16:00 op afspraak
+</div></footer>
+
+<!-- BEELDBRIEFING
+Hero: rij van 5 tot 8 chalets en stacaravans op het Koops-terrein in Elim, zonnige dag, twee bezoekers in gesprek met een adviseur op de veranda van een chalet. Echte foto van het terrein heeft voorkeur boven gegenereerd beeld.
+Kaart 1: interieur van een open chalet met bezoekers die rondkijken.
+Kaart 2: adviseur die met een echtpaar een chalet van buiten bekijkt en wijst naar de dakrand.
+Kaart 3: tafel met brochure, rekenmachine en koffie, of transport van een chalet op een dieplader.
+Ad-set voor de Koopsdag: zie de vier gegenereerde voorbeeldadvertenties in de offerte.
+-->
+</body>
+</html>
